@@ -1,10 +1,13 @@
 package com.curso.domains;
 
 import com.curso.domains.enums.Status;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -21,6 +24,10 @@ public class GrupoProduto {
     @Enumerated(EnumType.ORDINAL)
     @JoinColumn(name="status")
     private Status status;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "grupoProduto")
+    private List<Produto> produtos = new ArrayList();
 
     public GrupoProduto() {
         this.status = Status.ATIVO;
@@ -40,11 +47,11 @@ public class GrupoProduto {
         this.id = id;
     }
 
-    public String getDescricao() {
+    public @NotNull @NotBlank String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
+    public void setDescricao(@NotNull @NotBlank String descricao) {
         this.descricao = descricao;
     }
 
@@ -54,6 +61,14 @@ public class GrupoProduto {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
     }
 
     @Override
