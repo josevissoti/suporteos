@@ -11,7 +11,7 @@ import java.time.LocalDate;
 
 public class ProdutoDTO {
 
-    private long idProduto;
+    private Long idProduto;
 
     @NotNull(message = "O campo código de barra não pode ser nulo")
     @NotBlank(message = "O campo código de barra não pode estar vazio")
@@ -58,11 +58,11 @@ public class ProdutoDTO {
         this.status = produto.getStatus().getId();
     }
 
-    public long getIdProduto() {
+    public Long getIdProduto() {
         return idProduto;
     }
 
-    public void setIdProduto(long idProduto) {
+    public void setIdProduto(Long idProduto) {
         this.idProduto = idProduto;
     }
 

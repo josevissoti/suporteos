@@ -35,4 +35,10 @@ public class ProdutoService {
                 () -> new ObjectNotFoundException("Produto não encontrado. CodigoBarra: " +codigoBarra));
     }
 
+    public Produto create(ProdutoDTO dto){
+        dto.setIdProduto(null);
+        Produto obj = new Produto(dto);
+        return produtoRepo.save(obj);
+    }
+
 }

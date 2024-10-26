@@ -1,5 +1,6 @@
 package com.curso.domains;
 
+import com.curso.domains.dtos.ProdutoDTO;
 import com.curso.domains.enums.Status;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
@@ -17,7 +18,7 @@ public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_produto")
-    private long idProduto;
+    private Long idProduto;
 
     @NotBlank @NotNull
     private String codigoBarra;
@@ -55,7 +56,7 @@ public class Produto {
         this.status = Status.ATIVO;
     }
 
-    public Produto(long idProduto, String codigoBarra, String descricao, BigDecimal saldoEstoque, BigDecimal valorUnitario,
+    public Produto(Long idProduto, String codigoBarra, String descricao, BigDecimal saldoEstoque, BigDecimal valorUnitario,
                    LocalDate dataCadastro, GrupoProduto grupoProduto, Status status) {
         this.idProduto = idProduto;
         this.codigoBarra = codigoBarra;
@@ -65,16 +66,29 @@ public class Produto {
         this.dataCadastro = dataCadastro;
         this.grupoProduto = grupoProduto;
         this.status = status;
-
-        this.saldoEstoque = saldoEstoque != null ? saldoEstoque : BigDecimal.ZERO;
-        this.valorEstoque = saldoEstoque != null ? saldoEstoque.multiply(valorUnitario) : BigDecimal.ZERO;
+        this.valorEstoque = saldoEstoque.multiply(valorUnitario)
+                .setScale(2, BigDecimal.ROUND_HALF_UP);
     }
 
-    public long getIdProduto() {
+    public Produto(ProdutoDTO dto) {
+        this.idProduto = dto.getIdProduto();
+        this.codigoBarra = dto.getCodigoBarra();
+        this.descricao = dto.getDescricao();
+        this.saldoEstoque = dto.getSaldoEstoque();
+        this.valorUnitario = dto.getValorUnitario();
+        this.dataCadastro = dto.getDataCadastro();
+        this.grupoProduto = new GrupoProduto();
+        this.grupoProduto.setId(dto.getGrupoProduto());
+        this.status = Status.toEnum(dto.getStatus());
+        this.valorEstoque = saldoEstoque.multiply(valorUnitario)
+                .setScale(2, BigDecimal.ROUND_HALF_UP);
+    }
+
+    public Long getIdProduto() {
         return idProduto;
     }
 
-    public void setIdProduto(long idProduto) {
+    public void setIdProduto(Long idProduto) {
         this.idProduto = idProduto;
     }
 
