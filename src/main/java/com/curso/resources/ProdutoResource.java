@@ -3,6 +3,7 @@ package com.curso.resources;
 import com.curso.domains.Produto;
 import com.curso.domains.dtos.ProdutoDTO;
 import com.curso.services.ProdutoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,10 +37,22 @@ public class ProdutoResource {
     }
 
     @PostMapping
-    public ResponseEntity<ProdutoDTO> create(@RequestBody ProdutoDTO dto){
+    public ResponseEntity<ProdutoDTO> create(@Valid @RequestBody ProdutoDTO dto){
         Produto produto = produtoService.create(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(produto.getIdProduto()).toUri();
         return ResponseEntity.created(uri).build();
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<ProdutoDTO> update(@PathVariable Long id, @Valid @RequestBody ProdutoDTO objDto){
+        Produto Obj = produtoService.update(id, objDto);
+        return ResponseEntity.ok().body(new ProdutoDTO(Obj));
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<ProdutoDTO> delete(@PathVariable Long id){
+        produtoService.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }

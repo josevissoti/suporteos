@@ -2,8 +2,8 @@ package com.curso.resources;
 
 import com.curso.domains.GrupoProduto;
 import com.curso.domains.dtos.GrupoProdutoDTO;
-import com.curso.repositories.GrupoProdutoRepository;
 import com.curso.services.GrupoProdutoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,11 +31,23 @@ public class GrupoProdutoResource {
     }
 
     @PostMapping
-    public ResponseEntity<GrupoProdutoDTO> create(@RequestBody GrupoProdutoDTO dto){
+    public ResponseEntity<GrupoProdutoDTO> create(@Valid @RequestBody GrupoProdutoDTO dto){
         GrupoProduto grupoProduto = grupoProdutoService.create(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(grupoProduto.getId()).toUri();
         return ResponseEntity.created(uri).build();
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<GrupoProdutoDTO> update(@PathVariable Integer id, @Valid @RequestBody GrupoProdutoDTO objDto){
+        GrupoProduto Obj = grupoProdutoService.update(id, objDto);
+        return ResponseEntity.ok().body(new GrupoProdutoDTO(Obj));
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<GrupoProdutoDTO> delete(@PathVariable Integer id){
+        grupoProdutoService.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }
 
