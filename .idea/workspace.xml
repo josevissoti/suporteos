@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7aab5739-ba26-4506-ba6f-0285220638f9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/config/SwaggerConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/domains/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/domains/ServiceOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/domains/Technician.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/domains/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/domains/dtos/ServiceOrderDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/domains/dtos/TechnicianDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/domains/dtos/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/domains/enums/OrderPriority.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/domains/enums/OrderStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/domains/enums/PersonType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/repositories/PersonRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/repositories/ServiceOrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/repositories/TechnicianRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/repositories/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/resources/ServiceOrderResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/resources/TechnicianResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/resources/UserResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/services/ServiceOrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/services/TechnicianService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/curso/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/domains/enums/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/domains/enums/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/repositories/GrupoProdutoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/repositories/GrupoProdutoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/repositories/ProdutoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/repositories/ProdutoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/services/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/services/DBService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suporteos_dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/suporteos_dev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suporteos_test.log" beforeDir="false" afterPath="$PROJECT_DIR$/suporteos_test.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/curso/domains/enums/Status.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/curso/domains/enums/Status.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/curso/services/DBService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/curso/services/DBService.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2xYj2oPX6nMsLd7uWFTawph5btk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.SuporteosApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/josev/OneDrive/Documentos/Projects/FEF/suporteos"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7aab5739-ba26-4506-ba6f-0285220638f9" name="Changes" comment="" />
+      <created>1748121696920</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748121696920</updated>
+    </task>
+    <servers />
+  </component>
+</project>

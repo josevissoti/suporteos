@@ -1,12 +1,13 @@
 package com.curso.domains.enums;
 
 public enum Status {
-    INATIVO(0, "INATIVO"), ATIVO(1, "ATIVO");
+    INATIVO(0, "INATIVO"),
+    ATIVO(1, "ATIVO");
 
     private Integer id;
     private String situacao;
 
-    Status( Integer id, String situacao) {
+    Status(Integer id, String situacao) {
         this.id = id;
         this.situacao = situacao;
     }
@@ -28,9 +29,9 @@ public enum Status {
     }
 
     public static Status toEnum(Integer id) {
-        if(id==null) return null;
-        for (Status x : Status.values()){
-            if(id.equals(x.getId())){
+        if (id == null) return null;
+        for (Status x : Status.values()) {
+            if (id.equals(x.getId())) {
                 return x;
             }
         }

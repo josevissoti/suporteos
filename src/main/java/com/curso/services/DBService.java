@@ -1,10 +1,10 @@
 package com.curso.services;
 
-import com.curso.domains.GrupoProduto;
-import com.curso.domains.Produto;
+import com.curso.domains.*;
+import com.curso.domains.enums.OrderPriority;
+import com.curso.domains.enums.OrderStatus;
 import com.curso.domains.enums.Status;
-import com.curso.repositories.GrupoProdutoRepository;
-import com.curso.repositories.ProdutoRepository;
+import com.curso.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +20,16 @@ public class DBService {
     @Autowired
     private ProdutoRepository produtoRepo;
 
-    public void initDB(){
+    @Autowired
+    private TechnicianRepository technicianRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private ServiceOrderRepository serviceOrderRepository;
+
+    public void initDB() {
         GrupoProduto grupo01 = new GrupoProduto(null, "Limpeza", Status.ATIVO);
         GrupoProduto grupo02 = new GrupoProduto(null, "Alimenticio", Status.ATIVO);
 
@@ -33,12 +42,26 @@ public class DBService {
         Produto produto04 = new Produto(null, "4444", "Sabão em Pó OMO", new BigDecimal("400"),
                 new BigDecimal("15.5"), LocalDate.now(), grupo02, Status.ATIVO);
 
+        Technician technician01 = new Technician(null, "Jefferson", "Passerini",
+                "89308024000", "jefferson.passerini@gmail.com", "123");
+        User user01 = new User(null, "Joao", "Alberto",
+                "02569095099", "joao.alberto@gmail.com", "123");
+        User user02 = new User(null, "Jose", "Felipe",
+                "02569095044", "jose.felipe@gmail.com", "123");
+
+        ServiceOrder serviceOrder01 = new ServiceOrder(null, "test", "OS test",
+                OrderPriority.HIGH, OrderStatus.OPEN, technician01, user02);
+
         grupoProdutoRepo.save(grupo01);
         grupoProdutoRepo.save(grupo02);
         produtoRepo.save(produto01);
         produtoRepo.save(produto02);
         produtoRepo.save(produto03);
         produtoRepo.save(produto04);
+        technicianRepository.save(technician01);
+        userRepository.save(user01);
+        userRepository.save(user02);
+        serviceOrderRepository.save(serviceOrder01);
     }
 
 }

@@ -1,9 +1,9 @@
 package com.curso.repositories;
 
-import com.curso.domains.GrupoProduto;
+import com.curso.domains.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface GrupoProdutoRepository extends JpaRepository<GrupoProduto, Integer> {
+public interface PersonRepository extends JpaRepository<Person, Long> {
 }
